@@ -1,7 +1,7 @@
 Information About the Post
-<ul>
-  <li> <%= @author.name %></li>
-  <li> <%= @author.hometown %></li>
-</ul>
+<!--No longer passing the render method a string - passing it key value pairs-->
+<!--First key value pair tells Rails the name of the partial to render-->
+<!--The second key value pair specifies the locals as a Hash. That Hash's keys(post_author) will be a local variable within the partial-->
+<%= render partial: 'authors/author', locals: {post_author: @post.author}%>
 <%= @post.title %>
 <%= @post.content %>
